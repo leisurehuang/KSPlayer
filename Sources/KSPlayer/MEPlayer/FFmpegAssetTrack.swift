@@ -139,7 +139,7 @@ public class FFmpegAssetTrack: MediaPlayerTrack {
             codecName = ""
         }
         self.codecName = codecName
-        fieldOrder = FFmpegFieldOrder(rawValue: UInt8(codecpar.field_order.rawValue)) ?? .unknown
+        fieldOrder = FFmpegFieldOrder(rawValue: UInt32(codecpar.field_order.rawValue)) ?? .unknown
         var formatDescriptionOut: CMFormatDescription?
         if codecpar.codec_type == AVMEDIA_TYPE_AUDIO {
             mediaType = .audio
